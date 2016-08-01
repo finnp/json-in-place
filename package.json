@@ -4,6 +4,7 @@
   "description": "edit json in-place",
   "main": "index.js",
   "scripts": {
+    "pretest": "standard",
     "test:coverage": "nyc tape --no-cov test.js",
     "test": "node test.js"
   },

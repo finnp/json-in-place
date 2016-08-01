@@ -35,25 +35,24 @@ Inplace.prototype.set = function set (selector, value) {
       }
 
       if (token.value === '[') keys.push(0)
-      if (typeof keys[keys.length - 1] === 'number') {
-        // in Array
-        if (token.value === ',') keys[keys.length - 1]++
-        if (keys.join('.') === selector && (token.value === '[' || token.value === ',')) {
-          if (tokens[i + 1] && tokens[i + 1].type === 'whitespace') result.push(tokens[i + 1])
-          replacing = true
-          replacingLevel = keys.length
-          result.push({raw: JSON.stringify(value)})
-        }
-      } else {
-        // in Object
-        if (token.value === ',') sameLevelKey = true
-        if (keys.join('.') === selector && token.value === ':') {
+      var inArray = typeof keys[keys.length - 1] === 'number'
+      if (token.value === ',') {
+        if (inArray) keys[keys.length - 1]++
+        else sameLevelKey = true
+      }
+
+      if (keys.join('.') === selector) {
+        if (
+          (inArray && (token.value === '[' || token.value === ',')) ||
+          (!inArray && token.value === ':')
+        ) {
           if (tokens[i + 1] && tokens[i + 1].type === 'whitespace') result.push(tokens[i + 1])
           replacing = true
           replacingLevel = keys.length
           result.push({raw: JSON.stringify(value)})
         }
       }
+
       if (token.value === '{') newLevelKey = true
       if (replacing && (token.value === '}' || token.value === ']')) {
         if (keys.length === replacingLevel) {
@@ -64,6 +63,7 @@ Inplace.prototype.set = function set (selector, value) {
       }
       if (token.value === '}' || token.value === ']') keys.pop()
     }
+
     if (token.type === 'string') {
       if (newLevelKey) {
         keys.push(token.value)

@@ -1,6 +1,6 @@
 var test = require('tape')
 var fs = require('fs')
-var inplace = require('json-in-place')
+var inplace = require('./')
 
 var f0 = fs.readFileSync('./fixtures/0.json', 'utf8')
 var f01 = fs.readFileSync('./fixtures/0-1.json', 'utf8')
