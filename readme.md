@@ -6,13 +6,10 @@
 
 [![NPM](https://nodei.co/npm/json-in-place.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/json-in-place/)
 
-
-[![NPM](https://nodei.co/npm/json-in-place.png)](https://nodei.co/npm/json-in-place/)
-
 Change keys on a JSON string, so the change will be a minimal diff. It will not
 change the indentation of the string.
 
-```
+```js
 var inplace = require('json-in-place')
 var replaced = inplace('{"a":\t{"b": "c"},\n "arr": [1,2,3],\n "d": 1 }')
   .set('a.b', {'new': 'object'})
