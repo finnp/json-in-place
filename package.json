@@ -1,20 +1,21 @@
 {
   "name": "json-in-place",
-  "version": "1.0.0",
   "description": "edit json in-place",
   "main": "index.js",
   "scripts": {
     "pretest": "standard",
-    "test:coverage": "nyc tape --no-cov test.js",
-    "test": "node test.js"
+    "test": "nyc tape --no-cov test.js",
+    "test-coverage": "nyc report --reporter=text-lcov | coveralls",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/finnp/json-in-place.git"
+    "url": "https://github.com/finnp/json-in-place.git"
   },
   "keywords": [
     "json",
-    "format"
+    "format",
+    "preserve"
   ],
   "author": "Finn Pauls",
   "license": "ISC",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "nyc": "7.1.0",
     "standard": "7.1.2",
-    "tape": "4.6.0"
+    "tape": "4.6.0",
+    "semantic-release": "^4.3.5"
   }
 }
