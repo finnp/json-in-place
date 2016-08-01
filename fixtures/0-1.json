@@ -4,8 +4,7 @@
   "description": "edit json in-place",
   "main": "index.js",
   "scripts": {
-    "test:coverage": "nyc tape --no-cov test.js",
-    "test": "node test.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -22,11 +21,9 @@
   },
   "homepage": "https://github.com/finnp/json-in-place#readme",
   "dependencies": {
-    "json-lexer": "1.1.1"
+    "json-lexer": "2.5.0"
   },
   "devDependencies": {
-    "nyc": "7.1.0",
-    "standard": "7.1.2",
     "tape": "4.6.0"
   }
 }
