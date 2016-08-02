@@ -30,6 +30,7 @@ Inplace.prototype.set = function set (selector, value) {
 
     if (token.type === 'punctuator') {
       if (replacing && token.value === ',' && keys.length === replacingLevel) {
+        if (tokens[i - 1] && tokens[i - 1].type === 'whitespace') result.push(tokens[i - 1])
         replacing = false
         result.push(token)
       }
