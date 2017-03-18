@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "nyc": "^10.1.0",
-    "standard": "^8.1.0",
+    "standard": "^9.0.2",
     "tape": "^4.6.1",
     "semantic-release": "^4.3.5"
   }
