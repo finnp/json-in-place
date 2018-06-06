@@ -30,6 +30,6 @@
     "nyc": "^11.0.0",
     "standard": "^10.0.0",
     "tape": "^4.6.1",
-    "semantic-release": "^4.3.5"
+    "semantic-release": "^12.2.5"
   }
 }
