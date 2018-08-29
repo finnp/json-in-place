@@ -76,10 +76,10 @@ test('json-in-place', function (t) {
 
   t.test('combined', function (t) {
     var replaced = inplace('{"a":  {"b": "c"}, "arr": [1,2,3], "d": 1 }')
-    .set('a.b', {'new': 'object'})
-    .set('d', 2)
-    .set('arr.1', 'hi')
-    .toString()
+      .set('a.b', { 'new': 'object' })
+      .set('d', 2)
+      .set('arr.1', 'hi')
+      .toString()
     t.equals(replaced, '{"a":  {"b": {"new":"object"}}, "arr": [1,"hi",3], "d": 2 }')
 
     var original = `

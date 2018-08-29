@@ -50,7 +50,7 @@ Inplace.prototype.set = function set (selector, value) {
           if (tokens[i + 1] && tokens[i + 1].type === 'whitespace') result.push(tokens[i + 1])
           replacing = true
           replacingLevel = keys.length
-          result.push({raw: JSON.stringify(value)})
+          result.push({ raw: JSON.stringify(value) })
         }
       }
 

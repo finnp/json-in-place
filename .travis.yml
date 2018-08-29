@@ -19,4 +19,4 @@ after_success:
   - python travis_after_all.py
   - export $(cat .to_export_back) &> /dev/null
   - npm run test:coverage
-  - npm run semantic-release
+  - npx semantic-release
