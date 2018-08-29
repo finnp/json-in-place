@@ -5,7 +5,8 @@
   "scripts": {
     "pretest": "standard",
     "test": "nyc tape --no-cov test.js",
-    "test:coverage": "nyc report --reporter=text-lcov | coveralls"
+    "test:coverage": "nyc report --reporter=text-lcov | coveralls",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
