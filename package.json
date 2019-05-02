@@ -27,7 +27,7 @@
     "json-lexer": "1.1.1"
   },
   "devDependencies": {
-    "nyc": "^11.0.0",
+    "nyc": "^14.1.0",
     "semantic-release": "^15.9.12",
     "standard": ">=12.0.0",
     "tape": "^4.6.1"
